@@ -34,11 +34,11 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Email me at</p>
-                    <a
-                      href="mailto:rajnishsaphi@example.com"
+                  <a
+                      href="mailto:rajnishsa"
                       className="text-xl font-semibold text-foreground hover:text-accent transition-colors"
                     >
-                      rajnishsaphi@example.com
+                      rajnishsa
                     </a>
                   </div>
                 </div>
