@@ -35,10 +35,10 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Email me at</p>
                   <a
-                      href="mailto:rajnishsa"
+                      href="mailto:rajnishrajak82@gmail.com"
                       className="text-xl font-semibold text-foreground hover:text-accent transition-colors"
                     >
-                      rajnishsa
+                      rajnishrajak82@gmail.com
                     </a>
                   </div>
                 </div>
