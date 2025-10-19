@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Globe } from "lucide-react";
-import profileImage from "@/assets/profile.jpg";
+
+const profileImage = "https://i.postimg.cc/d1j4XdzM/rajnish.jpg";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
