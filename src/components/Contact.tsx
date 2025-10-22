@@ -8,6 +8,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -20,17 +22,46 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    reset();
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init("IjOmtVLTf6ZwDJMgc");
+      
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_mdu0mft", // Service ID
+        "template_kpx2zkk", // Template ID
+        {
+          from_name: data.name,
+          from_email: data.email,
+          subject: data.subject,
+          message: data.message,
+          to_email: "rajnishrajak82@gmail.com",
+        }
+      );
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -182,8 +213,8 @@ const Contact = () => {
                     )}
                   </div>
 
-                  <Button type="submit" className="w-full" size="lg">
-                    Send Message
+                  <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
