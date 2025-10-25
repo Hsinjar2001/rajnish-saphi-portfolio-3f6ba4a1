@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Globe } from "lucide-react";
+import { MapPin, Globe, Download } from "lucide-react";
 
 const profileImage = "https://i.postimg.cc/d1j4XdzM/rajnish.jpg";
 
@@ -67,6 +67,16 @@ const Hero = () => {
               className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
             >
               Contact Me
+            </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              asChild
+            >
+              <a href="/Rajnish_Kumar_Saphi_CV.pdf" download className="flex items-center gap-2">
+                <Download className="w-4 h-4" />
+                Download CV
+              </a>
             </Button>
           </div>
         </div>
