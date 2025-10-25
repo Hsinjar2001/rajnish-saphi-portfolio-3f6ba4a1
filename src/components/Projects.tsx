@@ -5,6 +5,15 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "DevHire Galaxy",
+      description:
+        "A comprehensive platform connecting developers with hiring opportunities, featuring advanced search, real-time matching, and seamless collaboration tools.",
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      github: "https://github.com/devrahul7/DevHire-Galaxy",
+      live: "#",
+      video: "/devhire-galaxy-demo.mp4",
+    },
+    {
       title: "E-Commerce Store",
       description:
         "A full-featured online shopping platform with product catalog, shopping cart, user authentication, and secure payment integration.",
@@ -48,8 +57,20 @@ const Projects = () => {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="hover:shadow-xl transition-all hover:-translate-y-2 duration-300 flex flex-col"
+                className="hover:shadow-xl transition-all hover:-translate-y-2 duration-300 flex flex-col overflow-hidden"
               >
+                {project.video && (
+                  <div className="w-full aspect-video bg-muted">
+                    <video
+                      src={project.video}
+                      controls
+                      className="w-full h-full object-cover"
+                      preload="metadata"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
                 <CardHeader>
                   <CardTitle className="text-xl">{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
