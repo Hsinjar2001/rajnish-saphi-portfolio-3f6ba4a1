@@ -73,10 +73,12 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => scrollToSection("contact")}
               className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
+              asChild
             >
-              Contact Me
+              <a href="https://wa.me/9779804817082" target="_blank" rel="noopener noreferrer">
+                Contact Me
+              </a>
             </Button>
           </div>
         </div>
