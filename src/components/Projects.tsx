@@ -14,6 +14,15 @@ const Projects = () => {
       video: "/devhire-galaxy-demo.mp4",
     },
     {
+      title: "Hospital Management System",
+      description:
+        "Comprehensive hospital management solution with patient records, appointment scheduling, staff management, and billing system for efficient healthcare operations.",
+      technologies: ["React", "Node.js", "MySQL", "Express"],
+      github: "https://github.com/Hsinjar2001/Hospital-Management-System-Website",
+      live: "#",
+      video: "/hospital-management-demo.mp4",
+    },
+    {
       title: "E-Commerce Store",
       description:
         "A full-featured online shopping platform with product catalog, shopping cart, user authentication, and secure payment integration.",
