@@ -66,7 +66,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "rajnishrajak82@gmail.com", href: "mailto:rajnishrajak82@gmail.com" },
-    { icon: Phone, label: "Phone", value: "+977 (XXX) XXX-XXX", href: "tel:+977XXXXXXXXX" },
+    { icon: Phone, label: "Phone", value: "+977 9804817082", href: "https://wa.me/9779804817082" },
     { icon: Linkedin, label: "LinkedIn", value: "Rajnish Kumar Saphi", href: "https://www.linkedin.com/in/rajnish-kumar-saphi-75b651256/" },
     { icon: MapPin, label: "Location", value: "Kathmandu, Nepal", href: null },
     { icon: Clock, label: "Working Hours", value: "Mon - Fri, 9:00 - 17:00", href: null },
