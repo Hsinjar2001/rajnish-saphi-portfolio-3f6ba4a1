@@ -62,14 +62,6 @@ const Hero = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("contact")}
-              className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
-            >
-              Contact Me
-            </Button>
-            <Button
-              size="lg"
               variant="secondary"
               asChild
             >
@@ -77,6 +69,14 @@ const Hero = () => {
                 <Download className="w-4 h-4" />
                 Download CV
               </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => scrollToSection("contact")}
+              className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
+            >
+              Contact Me
             </Button>
           </div>
         </div>
