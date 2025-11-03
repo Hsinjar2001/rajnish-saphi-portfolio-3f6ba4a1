@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Favicon SVG that displays an external profile image.
+  Place your image at `public/profile-pic.jpg` (or update the href below).
+  Browsers will fetch /profile-pic.jpg when loading the favicon.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Background circle -->
+  <rect width="64" height="64" fill="#ffffff" rx="8" ry="8"/>
+
+  <!-- Embedded user profile image (must be available at /profile-pic.jpg) -->
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="32" cy="32" r="28" />
+    </clipPath>
+  </defs>
+
+  <image href="/profile-pic.jpg" x="4" y="4" width="56" height="56" clip-path="url(#circleClip)" preserveAspectRatio="xMidYMid slice" />
+</svg>
